@@ -1,6 +1,6 @@
 {
-  "name": "asyncmongodb",
-  "version": "1.4.1",
+  "name": "asyncmongodb2",
+  "version": "1.4.2",
   "description": "Easiest module to connect to mongodb by promise or async/await",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MrAbdelrahman10/asyncmongodb.git"
+    "url": "git+https://github.com/turbobit/asyncmongodb2.git"
   },
   "keywords": [
     "mongo",
@@ -18,9 +18,9 @@
   "author": "Abdelrahman Mohamed",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MrAbdelrahman10/asyncmongodb/issues"
+    "url": "https://github.com/turbobit/asyncmongodb2/issues"
   },
-  "homepage": "https://github.com/MrAbdelrahman10/asyncmongodb#readme",
+  "homepage": "https://github.com/turbobit/asyncmongodb2#readme",
   "dependencies": {
     "mongodb": "^3.0.4"
   }

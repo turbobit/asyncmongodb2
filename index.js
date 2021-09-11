@@ -4,7 +4,7 @@ const MongoClient = require('mongodb').MongoClient;
 /**
  * Async mongodb class
  */
-class asyncmongodb {
+class asyncmongodb2 {
 
     /**
      * Create new object
@@ -18,7 +18,7 @@ class asyncmongodb {
      * Connect to mongodb
      */
     connect() {
-        return MongoClient.connect(this.config.uri)
+        return MongoClient.connect(this.config.uri, this.config.options)
             .then((client) => { this.client = client; this.db = this.client.db(this.config.dbName); return true; })
             .catch((e) => e);
     }
@@ -158,4 +158,4 @@ class asyncmongodb {
 
 }
 
-module.exports = asyncmongodb;
+module.exports = asyncmongodb2;

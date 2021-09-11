@@ -12,7 +12,7 @@ const collectionName = 'documents';
 
 // Run test
 (async () => {
-    const mng = new Asyncmongodb({ dbName: dbName, uri: url });
+    const mng = new Asyncmongodb({ dbName: dbName, uri: url, options:{} });
     await mng.connect();
     var _insertMeny = await mng.insertMany({ collection: 'countries', rows: [{ _id: 1, name: 'egypt' }, { _id: 2, name: 'turkey' }, { _id: 3, name: 'malaysia' }], ignoreErrors: true }).catch((e) => e.code);
     var _insert = await mng.insert({ collection: 'countries', row: { _id: 5, name: 'maroco' }, ignoreErrors: true }).catch((e) => e.code);
