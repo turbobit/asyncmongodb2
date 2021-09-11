@@ -1,3 +1,5 @@
+## Version 1.4.2
+* Add `options` parameter to `connect`
 ## Version 1.4.1
 * Fix bugs with old nodejs versions
 
