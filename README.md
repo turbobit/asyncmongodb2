@@ -570,3 +570,27 @@ amng.connect()
         amng.disconnect()
     });
 ```
+
+### Create Index
+Using **Async/Await**
+
+```js
+// Load Module
+const Asyncmongodb = require('asyncmongodb2');
+// Connection URL
+const url = 'mongodb://localhost:27017';
+// Database Name
+const dbName = 'myproject';
+
+// Run test
+(async () => {
+    const amng = new Asyncmongodb({ dbName: dbName, uri: url, options: {} });
+    await amng.connect();
+    const res = await amng.createIndex({ collection: 'contracts', index: { contractAddress: 1 }, opts: { unique: true } }).catch((e) => e.code);
+    /**
+	 Some Code
+	*/
+    amng.disconnect();
+})();
+    
+```
