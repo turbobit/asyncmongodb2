@@ -160,9 +160,6 @@ class asyncmongodb2 {
      * Create Index
      */
     createIndex({collection, index, opts}) {
-        console.log(collection);
-        console.log(index);
-        console.log(opts);
         return new Promise((resolve, reject) => {
             this.db.collection(collection).createIndex(index, opts, function (err, result) {
                 if (err) reject(err);
