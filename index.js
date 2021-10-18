@@ -159,7 +159,7 @@ class asyncmongodb2 {
     /**
      * Create Index
      */
-    createIndex({collection, index, opts}) {
+    createIndex({ collection, index, opts }) {
         return new Promise((resolve, reject) => {
             this.db.collection(collection).createIndex(index, opts, function (err, result) {
                 if (err) reject(err);
@@ -167,6 +167,36 @@ class asyncmongodb2 {
             });
         });
     }
+
+    /**
+     * aggreaget
+     * @param {*} param0 
+     * @returns 
+     */
+    aggregate({ collection, pipeline, options }) {
+        return new Promise((resolve, reject) => {
+            this.db.collection(collection).aggregate(pipeline, options, function (err, result) {
+                if (err) reject(err);
+                resolve(result);
+            });
+        });
+    }
+
+    /**
+     * distinct
+     * @param {*} param0 
+     * @returns 
+     */
+    distinct({ collection, field, query, options }) {
+        return new Promise((resolve, reject) => {
+            this.db.collection(collection).distinct(field, query, options, function (err, result) {
+                if (err) reject(err);
+                resolve(result);
+            });
+        });
+    }
+
+
 }
 
 module.exports = asyncmongodb2;

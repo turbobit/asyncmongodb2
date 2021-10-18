@@ -124,7 +124,7 @@ const dbName = 'myproject';
 (async () => {
     const amng = new Asyncmongodb({ dbName: dbName, uri: url, options: {} });
     await amng.connect();
-    const data = await mng.find({collection: 'countries', where:{}, fields:{}, sort: {name: 1}, limit: 10});
+    const data = await amng.find({collection: 'countries', where:{}, fields:{}, sort: {name: 1}, limit: 10});
     /**
 	 Some Code
 	*/
@@ -171,7 +171,7 @@ const dbName = 'myproject';
 (async () => {
     const amng = new Asyncmongodb({ dbName: dbName, uri: url, options: {} });
     await amng.connect();
-    const data = await mng.findOne({collection: 'countries', where:{}, sort: { name: 1 }, skip: 1, fields:{}, limit: 10});
+    const data = await amng.findOne({collection: 'countries', where:{}, sort: { name: 1 }, skip: 1, fields:{}, limit: 10});
     /**
 	 Some Code
 	*/
@@ -217,7 +217,7 @@ const dbName = 'myproject';
 (async () => {
     const amng = new Asyncmongodb({ dbName: dbName, uri: url, options: {} });
     await amng.connect();
-    const data = await mng.insert({collection: 'countries', row:{name: "Egypt"}});
+    const data = await amng.insert({collection: 'countries', row:{name: "Egypt"}});
     /**
 	 Some Code
 	*/
@@ -264,7 +264,7 @@ const dbName = 'myproject';
 (async () => {
     const amng = new Asyncmongodb({ dbName: dbName, uri: url, options: {} });
     await amng.connect();
-    const res = await mng.insertMany({ collection: 'countries', rows: [{ _id: 1, name: 'egypt' }, { _id: 2, name: 'turkey' }, { _id: 3, name: 'malaysia' }], ignoreErrors: true }).catch((e) => e.code);
+    const res = await amng.insertMany({ collection: 'countries', rows: [{ _id: 1, name: 'egypt' }, { _id: 2, name: 'turkey' }, { _id: 3, name: 'malaysia' }], ignoreErrors: true }).catch((e) => e.code);
     /**
 	 Some Code
 	*/
@@ -310,7 +310,7 @@ const dbName = 'myproject';
 (async () => {
     const amng = new Asyncmongodb({ dbName: dbName, uri: url, options: {} });
     await amng.connect();
-    const data = await mng.update({collection: 'countries', where: {_id: 1}, row:{name: "Egypt"}});
+    const data = await amng.update({collection: 'countries', where: {_id: 1}, row:{name: "Egypt"}});
     /**
 	 Some Code
 	*/
@@ -357,7 +357,7 @@ const dbName = 'myproject';
 (async () => {
     const amng = new Asyncmongodb({ dbName: dbName, uri: url, options: {} });
     await amng.connect();
-    const res = await mng.updateMany({ collection: 'countries', rows: [{ _id: 1, name: 'egypt' }, { _id: 2, name: 'turkey' }, { _id: 3, name: 'malaysia' }], ignoreErrors: true }).catch((e) => e.code);
+    const res = await amng.updateMany({ collection: 'countries', rows: [{ _id: 1, name: 'egypt' }, { _id: 2, name: 'turkey' }, { _id: 3, name: 'malaysia' }], ignoreErrors: true }).catch((e) => e.code);
     /**
 	 Some Code
 	*/
@@ -403,7 +403,7 @@ const dbName = 'myproject';
 (async () => {
     const amng = new Asyncmongodb({ dbName: dbName, uri: url, options: {} });
     await amng.connect();
-    const data = await mng.delete({collection: 'countries', where: {_id: 1}});
+    const data = await amng.delete({collection: 'countries', where: {_id: 1}});
     /**
 	 Some Code
 	*/
@@ -450,7 +450,7 @@ const dbName = 'myproject';
 (async () => {
     const amng = new Asyncmongodb({ dbName: dbName, uri: url, options: {} });
     await amng.connect();
-    const res = await mng.deleteMany({ collection: 'countries', where: {}, ignoreErrors: true }).catch((e) => e.code);
+    const res = await amng.deleteMany({ collection: 'countries', where: {}, ignoreErrors: true }).catch((e) => e.code);
     /**
 	 Some Code
 	*/
@@ -496,7 +496,7 @@ const dbName = 'myproject';
 (async () => {
     const amng = new Asyncmongodb({ dbName: dbName, uri: url, options: {} });
     await amng.connect();
-    const res = await mng.count({ collection: 'countries', where: {} }).catch((e) => e.code);
+    const res = await amng.count({ collection: 'countries', where: {} }).catch((e) => e.code);
     /**
 	 Some Code
 	*/
@@ -542,7 +542,7 @@ const dbName = 'myproject';
 (async () => {
     const amng = new Asyncmongodb({ dbName: dbName, uri: url, options: {} });
     await amng.connect();
-    const res = await mng.dropCollection('countries').catch((e) => e.code);
+    const res = await amng.dropCollection('countries').catch((e) => e.code);
     /**
 	 Some Code
 	*/
@@ -587,6 +587,55 @@ const dbName = 'myproject';
     const amng = new Asyncmongodb({ dbName: dbName, uri: url, options: {} });
     await amng.connect();
     const res = await amng.createIndex({ collection: 'contracts', index: { contractAddress: 1 }, opts: { unique: true } }).catch((e) => e.code);
+    /**
+	 Some Code
+	*/
+    amng.disconnect();
+})();
+    
+```
+
+
+### aggregate
+Using **Async/Await**
+
+```js
+// Load Module
+const Asyncmongodb = require('asyncmongodb2');
+// Connection URL
+const url = 'mongodb://localhost:27017';
+// Database Name
+const dbName = 'myproject';
+
+// Run test
+(async () => {
+    const amng = new Asyncmongodb({ dbName: dbName, uri: url, options: {} });
+    await amng.connect();
+    const res = await amng.aggregate({ collection: 'contracts', pipeline: [], options: {}} });
+    /**
+	 Some Code
+	*/
+    amng.disconnect();
+})();
+    
+```
+
+### distinct
+Using **Async/Await**
+
+```js
+// Load Module
+const Asyncmongodb = require('asyncmongodb2');
+// Connection URL
+const url = 'mongodb://localhost:27017';
+// Database Name
+const dbName = 'myproject';
+
+// Run test
+(async () => {
+    const amng = new Asyncmongodb({ dbName: dbName, uri: url, options: {} });
+    await amng.connect();
+    const res = await amng.distinct({ collection: 'contracts', field: {}, query: {} options: {}} });
     /**
 	 Some Code
 	*/

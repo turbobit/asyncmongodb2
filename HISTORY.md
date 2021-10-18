@@ -1,3 +1,7 @@
+## Version 1.4.4
+* Add `aggregate` function
+* Add `distinct` function
+
 ## Version 1.4.3
 * Add `CreateIndex` function
 ## Version 1.4.2
